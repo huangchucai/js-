@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>生成特定区域的随机数</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script>
+    	function randomInt(min,max){
+    		console.log( Math.floor(Math.random()*(max-min)+min) );
+    	}
+    	function randomInt2(min,max){
+    		console.log(Math.floor(Math.random()*(max-min+1)+min))
+    	}
+    	// 获取随机数组
+    	function randomArr(min,max,len){
+    		var arr=[];
+      		for(var i=0;i<len;i++){
+    			arr.push(Math.floor(Math.random()*(max-min+1)+min));
+    		}
+    		return arr;
+    	}
+    	// 生成随机字符串
+    	function randomStr(n){
+    		var str ='0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ';
+    		var strTwo='';
+    		for(var i=0;i<n;i++){
+    			 strTwo+=str[Math.floor(Math.random()*str.length)];
+    		}
+    		return strTwo;
+    	}
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>使用数组拼接出如下字符串</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <button type="button" onclick="getStr(prod)">点击显示</button>
+    <div class="show"></div>
+    <script>
+    var showItem = document.querySelector(".show");
+	var prod = {
+		name: '女装',
+		styles: ['短款', '冬季', '春装']
+	};
+	var arr=[];
+	arr.push("<dl class='product'>"+'\n');
+	// 通过数组的形式实现
+	function getStr(Obj){
+		for(var i in Obj){
+			if(i==='name'){
+				arr.push("<dt>"+Obj[i]+"<dt>"+'\n');
+			}
+			else{
+				for(var j=0;j<Obj[i].length;j++){
+					arr.push("<dd>"+Obj[i][j]+"<dd>"+'\n');
+				}
+			}
+		}
+		arr.push("</dl>"+'\n');
+		console.log(arr.join(""));	
+		showItem.innerHTML=arr.join("");
+	}
+	// 通过字符串拼接实现
+	var str="<dl class='product'>" +'\n';
+	function getArr(Obj){
+		for(var i in Obj){
+			if(i==='name'){
+				str+="<dt>"+Obj[i]+"<dt>"  +'\n';
+			}
+		else
+			for(var j=0;j<Obj[i].length;j++){
+				str+="<dd>"+Obj[i][j]+"<dd>" +'\n';
+			}
+		}
+		str+="</dt>"
+		console.log(str);
+	}
+	getArr(prod);
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>数组的方法</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+  <script>
+/*  	var a=['a','b','c','d'];
+  	var b= a.splice(0,2,1,2);  //b=[a,b]  a=[1,2,c,d]
+  	//给a开头添加一个元素
+  	var c =a.splice(0,0,'start','add'); //c=[]  a=["start", "add", 1, 2, "c", "d"]
+  	//splice()方法模仿push()*/
+  	function push(arr,val){
+  		arr.splice(arr.length,0,val);
+  		return arr.length
+  	}
+  	//splice()方法模仿pop()
+  	function pop(arr){
+  		return arr.splice(arr.length-1,1)[0]
+  	}
+  	//splice()方法模仿unshift()
+  	function unshift(arr,val){
+  		arr.splice(0,0,val);
+  		return arr.length;
+  	}
+  	//splice()方法模拟shift()
+  	function shift(){
+  		return arr.splice(0,1)[0]
+  	}
+  	//
+  	var arr =[1,2,3];
+  	//slice()
+  	var hh=[1,2,3,4]
+  	var cc=hh.slice(0, 2)  //cc=[1, 2] 
+  	//console.log(hh);  //hh=[1,2,3,4]
+  	//join()方法
+  	var a=[1,2,3,4];
+  	var b=a.join(); //b='1,2,3,4'
+  	var c=a.join("") //c='1234'
+  	var d=a.join("+") //d = "1+2+3+4"
+  	//concat()
+  	var aa=[1,2,3,4];
+  	var bb=['a','b','c','d'];
+  	var cc=aa.concat(bb)  //cc  = [1, 2, 3, 4, "a", "b", "c", "d"]
+  	var dd=aa.concat(5,6,7) //dd =[1, 2, 3, 4, 5, 6, 7]
+
+  	var items = [
+	  { name: 'Edward', value: 21 },
+	  { name: 'Sharpe', value: 37 },
+	  { name: 'And', value: 45 },
+	  { name: 'The', value: -12 },
+	  { name: 'Magnetic',value: 10},
+	  { name: 'Zeros', value: 37 }
+	];
+
+	items.sort(function (a, b) {
+	  if (a.value > b.value) {
+	    return 1;
+	  }
+	  if (a.value < b.value) {
+	    return -1;
+	  }
+	  // a 必须等于 b
+	  return 0;
+	});
+	var arr=[]
+	for(var i=0 ;i<items.length ;i++){
+		arr[i]= items[i].value;
+	}	
+/*	items.sort(function (a, b) {
+	  if (a.value > b.value) {
+	    return 1;
+	  }
+	  if (a.value < b.value) {
+	    return -1;
+	  }
+	  // a 必须等于 b
+	  return 0;
+	});*/
+
+		var stringArray = ["Blue", "Humpback", "Beluga"];
+		var numericStringArray = ["80", "9", "700"];
+		var numberArray = [40, 1, 5, 200];
+		var mixedNumericArray = ["80", "9", "700", 40, 1, 5, 200];
+
+		function compareNumbers(a, b)
+		{
+		  return a - b;
+		}
+
+	console.log('stringArray:', stringArray.join());
+	console.log('Sorted:', stringArray.sort());
+   </script>  
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>寻找数字，并做成新的数组，不改变原来的数组</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script>
+    	var arr = ["a", "b", 1, 3, 5, "b", 2];
+     	function deleteNumber(arr){
+    		var newarr=[];
+    		for(var i= 0;i<arr.length;i++){
+    			if(typeof arr[i] === 'number'){			
+    				newarr.push(Number(arr.slice(i,i+1).join()));
+    			}
+    		}
+    		return newarr
+    	}
+    </script>
+</body>
+</html>
